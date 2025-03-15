@@ -7,9 +7,9 @@
   --font-poppins: "Poppins", sans-serif;
   --font-bangla: "Hind Siliguri", sans-serif;
 
-  --color-primary: #00bcff;
-  --color-primary-light: rgba(26, 145, 255, 0.1);
-  --color-primary-light-1: #edf7ff;
+  --color-sky: #00bcff;
+  --color-sky-light: rgba(26, 145, 255, 0.1);
+  --color-sky-light-1: #edf7ff;
   --color-dark: #18181b;
   --color-dark-0: rgba(24, 24, 27, 0.5);
   --color-dark-1: rgba(24, 24, 27, 0.8);
@@ -18,8 +18,8 @@
   --color-gray: #f8f8f8;
 }
 
-.container-new{
-    max-width: 1280px;
-    width: 90%;
-    margin-inline: auto;
+.container-new {
+  max-width: 1280px;
+  width: 90%;
+  margin-inline: auto;
 }
