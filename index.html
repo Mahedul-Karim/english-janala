@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./src/styles/output.css" />
   </head>
   <body>
-    <header class="bg-gray border-b border-solid border-dark/[0.1] py-4">
+    <header class="bg-gray border-b border-solid border-dark/[0.1] py-4 sticky top-0 z-[1]">
       <nav class="container-new flex items-center justify-between">
         <div class="flex items-center">
           <span
@@ -208,6 +208,116 @@
           </div>
         </div>
       </section>
+      <section class="container-new py-8">
+        <h2 class="text-center text-dark text-2xl font-poppins font-bold">
+          <span class="text-sky">Frequently</span> Asked Questions
+        </h2>
+        <div class="my-8 space-y-2">
+          <div
+            class="collapse collapse-plus border border-base-300 bg-gray"
+          >
+            <input type="radio" name="my-accordion-3" checked="checked" />
+            <div class="collapse-title font-semibold font-poppins text-base">
+              What is the difference between var, let, and const?
+            </div>
+            <div class="collapse-content text-dark-3">
+              In JavaScript, var is function-scoped, hoisted, and allows redeclaration and reassignment. let is block-scoped, hoisted but not initialized, and allows reassignment but not redeclaration. const is also block-scoped, hoisted but not initialized, and prevents reassignment, though object properties can still be modified. It's best to use const by default, let when reassignment is needed, and avoid var.
+            </div>
+          </div>
+          <div
+            class="collapse collapse-plus border border-base-300 bg-gray"
+          >
+            <input type="radio" name="my-accordion-3" checked="checked" />
+            <div class="collapse-title font-semibold font-poppins text-base">
+              What is the difference between map(), forEach(), and filter()?
+            </div>
+            <div class="collapse-content text-dark-3">
+              In JavaScript, map(), forEach(), and filter() are array methods used for iteration but serve different purposes. map() returns a new array by applying a function to each element, preserving the original array. forEach() executes a function on each element but does not return a new array, making it useful for side effects like logging or modifying external variables. filter() creates a new array with elements that satisfy a given condition, excluding those that don’t. While map() and filter() return new arrays, forEach() simply iterates without producing a new array.
+            </div>
+          </div>
+          <div
+            class="collapse collapse-plus border border-base-300 bg-gray"
+          >
+            <input type="radio" name="my-accordion-3" checked="checked" />
+            <div class="collapse-title font-semibold font-poppins text-base">
+              Explain arrow functions and how they are different from regular functions
+            </div>
+            <div class="collapse-content text-dark-3">
+              Arrow functions provide a concise syntax for writing functions, using the => syntax, and they inherit the this value from their surrounding context, unlike regular functions, which have their own this binding. Additionally, arrow functions cannot be used as constructors, while regular functions can. Arrow functions also omit the need for the function keyword, making them more compact and often used for shorter, inline functions.
+            </div>
+          </div>
+          <div
+            class="collapse collapse-plus border border-base-300 bg-gray"
+          >
+            <input type="radio" name="my-accordion-3" checked="checked" />
+            <div class="collapse-title font-semibold font-poppins text-base">
+              Explain how JavaScript Promises work
+            </div>
+            <div class="collapse-content text-dark-3">
+              JavaScript Promises represent the eventual completion (or failure) of an asynchronous operation and its resulting value. A Promise is in one of three states: pending, resolved (fulfilled), or rejected. You can handle the result or error of a Promise using .then() for success and .catch() for errors, providing a way to chain and manage asynchronous code more effectively.
+            </div>
+          </div>
+          <div
+            class="collapse collapse-plus border border-base-300 bg-gray"
+          >
+            <input type="radio" name="my-accordion-3" checked="checked" />
+            <div class="collapse-title font-semibold font-poppins text-base">
+              Explain how closures work in JavaScript
+            </div>
+            <div class="collapse-content text-dark-3">
+              Closures in JavaScript occur when a function retains access to its lexical scope, even after the outer function has finished executing. This allows inner functions to access variables from their outer function’s scope, enabling powerful patterns like data encapsulation and function factories. Closures are commonly used for creating private variables and managing state in asynchronous code.
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+    <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button>
+    <dialog id="my_modal_1" class="modal">
+      <div class="modal-box p-4">
+        <div class="border border-solid border-gray-200 rounded-[0.5rem] p-4">
+          <h2
+            class="text-2xl font-poppins text-black font-bold flex items-center"
+          >
+            Eager(<svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="size-6"
+            >
+              <path
+                d="M8.25 4.5a3.75 3.75 0 1 1 7.5 0v8.25a3.75 3.75 0 1 1-7.5 0V4.5Z"
+              />
+              <path
+                d="M6 10.5a.75.75 0 0 1 .75.75v1.5a5.25 5.25 0 1 0 10.5 0v-1.5a.75.75 0 0 1 1.5 0v1.5a6.751 6.751 0 0 1-6 6.709v2.291h3a.75.75 0 0 1 0 1.5h-7.5a.75.75 0 0 1 0-1.5h3v-2.291a6.751 6.751 0 0 1-6-6.709v-1.5A.75.75 0 0 1 6 10.5Z"
+              />
+            </svg>
+            :ইগার)
+          </h2>
+          <div class="my-2 space-y-1">
+            <p class="font-poppins font-semibold text-black">Meaning</p>
+            <p class="font-bangla font-medium text-black">আগ্রহী</p>
+          </div>
+          <div class="my-2 space-y-1">
+            <p class="font-poppins font-semibold text-black">Example</p>
+            <p class="font-poppins text-black">The kids were eager to open their gifts.</p>
+          </div>
+          <div class="my-2 space-y-1">
+            <p class="font-bangla font-semibold text-black">সমার্থক শব্দ গুলো</p>
+            <div class="flex items-center gap-2 flex-wrap">
+              <div class="badge font-poppins border border-solid border-[#D7E4EF] text-base h-[35px] !text-dark bg-sky-light-1">Enthusiastic</div>
+            </div>
+          </div>
+          <div class="modal-action justify-start">
+            <form method="dialog">
+              <button
+                class="btn btn-primary h-[30px] sm:h-[38px] sm:text-base text-sm px-[0.4rem] sm:px-[1rem]"
+              >
+                Complete Learning
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </dialog> -->
   </body>
 </html>
