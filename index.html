@@ -9,6 +9,7 @@
   <body>
     <header
       class="bg-gray border-b border-solid border-dark/[0.1] py-4 sticky top-0 z-[1]"
+      id="header"
     >
       <nav class="container-new flex items-center justify-between">
         <div class="flex items-center">
@@ -21,9 +22,10 @@
             >জানালা</span
           >
         </div>
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-2 nav-container">
           <button
-            class="btn btn-outline btn-primary h-[30px] sm:h-[38px] items-center sm:text-base text-sm px-[0.4rem] sm:px-[1rem]"
+            class="btn btn-outline btn-primary h-[30px] sm:h-[38px] items-center sm:text-base text-sm px-[0.4rem] sm:px-[1rem] nav-btn"
+            data-id="faq"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +42,8 @@
             FAQ
           </button>
           <button
-            class="btn btn-outline btn-primary items-center h-[30px] sm:h-[38px] sm:text-base text-sm px-[0.4rem] sm:px-[1rem]"
+            class="btn btn-outline btn-primary items-center h-[30px] sm:h-[38px] sm:text-base text-sm px-[0.4rem] sm:px-[1rem] nav-btn"
+            data-id="vocabulary"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +118,7 @@
           />
         </div>
       </section>
-      <section class="container-new py-8">
+      <section class="container-new py-8" id="vocabulary">
         <h2 class="text-center text-dark text-2xl font-poppins font-bold">
           <span class="text-sky">Let's</span> Learn Vocabularies
         </h2>
@@ -210,7 +213,7 @@
           </div>
         </div>
       </section>
-      <section class="container-new py-8">
+      <section class="container-new py-8" id="faq">
         <h2 class="text-center text-dark text-2xl font-poppins font-bold">
           <span class="text-sky">Frequently</span> Asked Questions
         </h2>
@@ -386,5 +389,6 @@
         </div>
       </div>
     </dialog> -->
+    <script src="./src/js/main.js"></script>
   </body>
 </html>
