@@ -1,13 +1,30 @@
 const navContainer = document.querySelector(".nav-container");
-const header = document.getElementById("header");
 const levelButtons = document.getElementById("level-buttons");
 const vocalbularyContainer = document.getElementById("vocabulary-container");
 const modal = document.getElementById("my_modal_1");
 const modalBox = document.querySelector(".modal-box");
+const privateElements = document.querySelectorAll(".private");
+const form = document.getElementById("login-form");
+const passwordInput = document.getElementById("password");
+const nameInput = document.getElementById("name");
+const banner = document.getElementById("public");
+const logOut = document.getElementById("log-out");
 
-const headerHeight = header.clientHeight;
 let currentButton = 0;
 let activeVocabulary = 0;
+
+const handleTogglePrivate = () => {
+  privateElements.forEach((elem) => elem.classList.toggle("hidden"));
+};
+const handelTogglePublic = () => {
+  banner.classList.toggle("hidden");
+};
+
+const handlePronounce = (word) => {
+  const utterence = new SpeechSynthesisUtterance(word);
+  utterence.lang = "en-EN";
+  window.speechSynthesis.speak(utterence);
+};
 
 const getData = async (endpoint) => {
   const res = await fetch(
@@ -155,6 +172,7 @@ const renderVocabolary = (data = []) => {
                   </button>
                   <button
                     class="bg-sky-light p-2 rounded-lg text-dark-2 cursor-pointer"
+                    onclick="handlePronounce('${card.word}')"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -238,6 +256,9 @@ navContainer.addEventListener("click", function (e) {
 
   if (!button) return;
 
+  const header = document.getElementById("header");
+  const headerHeight = header.clientHeight;
+
   const sectionId = button.dataset.id;
 
   const section = document.getElementById(sectionId);
@@ -246,6 +267,52 @@ navContainer.addEventListener("click", function (e) {
     top: section.offsetTop - headerHeight,
     behavior: "smooth",
   });
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const name = nameInput.value;
+  const password = passwordInput.value;
+
+  if (!name) {
+    return Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Name is required!",
+    });
+  }
+
+  if (!password) {
+    return Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Password is required!",
+    });
+  }
+
+  if (password !== "123456") {
+    return Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Wrong password! Contact admin to get password",
+    });
+  }
+
+  Swal.fire({
+    title: "Login Successfull!",
+    icon: "success",
+  });
+
+  handelTogglePublic();
+  handleTogglePrivate();
+  nameInput.value = "";
+  passwordInput.value = "";
+});
+
+logOut.addEventListener("click", () => {
+  handelTogglePublic();
+  handleTogglePrivate();
 });
 
 getButtons();
